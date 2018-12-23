@@ -57,6 +57,6 @@ http.createServer(function (req, res) {
 
 If you prefer, you can clone it from its [repository](https://github.com/digitalilusion/pic-ml-tool-backend).
 
-## License
+## License
 
 Apache 2.0
