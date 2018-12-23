@@ -1,16 +1,62 @@
-# pic_ml_tool
+# Picture ML Tool
 
-Picture ML Tool
+Basic [Flutter](http://flutter.io) app that saves the boilerplate code to upload annotated images for your machine learning projects.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the repository and open it with `Android Studio`.
 
-A few resources to get you started if this is your first Flutter project:
+## Example backend
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+To test it you can use this simple backend written in NodeJS
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```javascript
+var http = require('http');
+var formidable = require('formidable');
+var fs = require('fs');
+
+const PORT = 8080;
+
+console.log("Pic ML Tool - Example backend in node.js");
+console.log("Listening in: " + PORT);
+
+http.createServer(function (req, res) {
+  if (req.method != "POST") {
+    res.writeHead(405);
+    res.end();
+    return;
+  }
+  var form = new formidable.IncomingForm();
+  form.parse(req, function (err, fields, files) {
+    if (!('file' in files)) {
+      res.writeHead(404)
+      res.end();
+      return;
+    }
+    var f = files['file'];
+    console.log("File: \""+ f.name +"\" (" + f.size + " bytes)");
+    if ('annotation' in fields) {
+      console.log("Annotation: \"" + fields['annotation'] + "\"");
+    }
+    try {
+      fs.rename(f.path, "/tmp/" + f.name, function (err) {
+        if (err) throw err;
+      });
+    } catch (err) {
+      res.writeHead(500);
+      res.end();
+      return;
+    }
+    console.log("Saved in: /tmp/" + f.name);
+    res.writeHead(201)
+    //res.write("Paco")
+    res.end();
+  })
+}).listen(PORT);
+```
+
+If you prefer, you can clone it from its [repository](https://github.com/digitalilusion/pic-ml-tool-backend).
+
+## License
+
+Apache 2.0
