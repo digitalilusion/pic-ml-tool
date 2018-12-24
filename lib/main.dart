@@ -34,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   File _image;
   String _uri = "";
   bool _isUploading = false;
@@ -50,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _image = image;
     });
   }
-
 
   void _upload(BuildContext ctx) async {
     var stream = new http.ByteStream(DelegatingStream.typed(_image.openRead()));
@@ -187,14 +185,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               helperStyle: TextStyle(color: Colors.red)),
                           keyboardType: TextInputType.url,
                           controller: _urlController,
-                        )
-                    ),
+                        )),
                     TextField(
                       decoration: InputDecoration(
-                          labelText: '2. Enter pic annotation (optional)',
-                          hintText: 'cat',
-                          helperText: "for supervised learning",
-                          ),
+                        labelText: '2. Enter pic annotation (optional)',
+                        hintText: 'cat',
+                        helperText: "for supervised learning",
+                      ),
                       controller: _annController,
                     )
                   ],
