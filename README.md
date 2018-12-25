@@ -2,7 +2,8 @@
 
 Basic [Flutter](http://flutter.io) app that saves the boilerplate code to upload annotated images for your machine learning projects.
 
-
+## Screenshot
+![Main use case](https://raw.githubusercontent.com/digitalilusion/pic-ml-tool/master/resources/sc-1.png)
 ## Getting Started
 
 Clone the repository and open it with `Android Studio`.
