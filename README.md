@@ -76,7 +76,7 @@ If you prefer, you can clone it from its [repository](https://github.com/digital
 
 ## Made with Flutter
 
-!(Flutter Logo)[https://github.com/digitalilusion/pic-ml-tool/resources/flutter-logo.png]
+![Flutter Logo](https://github.com/digitalilusion/pic-ml-tool/resources/flutter-logo.png)
 
 
 ## License
