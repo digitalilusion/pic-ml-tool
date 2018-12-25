@@ -2,9 +2,26 @@
 
 Basic [Flutter](http://flutter.io) app that saves the boilerplate code to upload annotated images for your machine learning projects.
 
+
 ## Getting Started
 
 Clone the repository and open it with `Android Studio`.
+
+Run the project.
+
+The app sends image and annotation (optionally) as form multi-part.
+
+The image use form file name __"file"__ and the annotation text, __"annotation"__.
+
+If the backend send a `2xx` code, the app show the "Success" dialog.
+In another case, "Error" with the status code.
+
+## Available in Google Play
+
+If you prefer, you can install directly from `Google Play`.
+
+[PIC ML Tool - Google Play](https://play.google.com/store/apps/details?id=com.digitalilusion.picmltool)
+
 
 ## Example backend
 
@@ -56,6 +73,11 @@ http.createServer(function (req, res) {
 ```
 
 If you prefer, you can clone it from its [repository](https://github.com/digitalilusion/pic-ml-tool-backend).
+
+## Made with Flutter
+
+!(Flutter Logo)[https://github.com/digitalilusion/pic-ml-tool/resources/flutter-logo.png]
+
 
 ## License
 
